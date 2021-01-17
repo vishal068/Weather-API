@@ -5,7 +5,7 @@ const express = require('express')
 const hbs = require('hbs')
 
 const app  = express()
-
+const port = process.env.PORT || 3000
 //Define paths for Express Config
 const publicDirectory = path.join(__dirname,'../public')
 const viewsPath = path.join(__dirname,'../templates/views')
@@ -87,6 +87,6 @@ app.get('*',(req,res)=>{
     res.render('404',{errorMessage:'Page not found',name:'Vishal Agrawal',title:'Error'})
 })
 
-app.listen(3000,()=>{
-    console.log('Our app started')
+app.listen(port,()=>{
+    console.log('Our app started on port'+port)
 })
